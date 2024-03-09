@@ -1,15 +1,10 @@
 const express = require('express')
-require('dotenv').config()
+const routes = express.Router()
 
-const app = express()
-PORT = process.env.PORT
-const conn = require('./conn')
-app.use(express.json())
+const tripDetail = require('../controllers/trip.controller')
 
-app.get('/hello', (req,res)=>{
-    res.send('Hello World!')
-})
+routes.post('/', tripDetail.tripAdditionController) // Add a new trip
+routes.get('/', tripDetail.getTripDetailsController) // Get all trips
+routes.get('/:id', tripDetail.getTripDetailsByIdController) // Get trip by ID
 
-app.listen(PORT, ()=>{
-    console.log('Server started at http:/;localhost:${PORT}')
-})
+module.exports = routes;

@@ -1,12 +1,12 @@
-const db = require('../conn')
-const mongoose = require('../conn').mongoose
+const db = require('../conn');
+const mongoose = require('../conn').mongoose;
 
 const tripSchema = mongoose.Schema({
-    tripName: mongoose.Schema{
-        type: String,
+    tripName: {
+        type: mongoose.Schema.Types.String,
         required: true,
         minlength: 1,
-        maxlength:50,
+        maxlength: 50,
     },
     startDateofJourney: {
         type: String,
@@ -26,28 +26,28 @@ const tripSchema = mongoose.Schema({
         type: Number,
     },
     tripType: {
-        type: String
+        type: String,
         enum: ['backpacking', 'leisure', 'business'],
     },
     experience: {
-        type: String
+        type: String,
     },
     image: {
-        type:String
+        type: String,
     },
     shortDescription: {
         type: String,
-        required: true
+        required: true,
     },
     featured: {
-        type: boolean,
-        default: false
+        type: Boolean,
+        default: false,
     },
     createdat: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
     },
 });
 
-const Trip = mongoose.model('tripdetails',tripSchema)
-module.exports = { Trip }
+const Trip = mongoose.model('tripdetails', tripSchema);
+module.exports = { Trip };
