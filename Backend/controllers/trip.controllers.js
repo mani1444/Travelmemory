@@ -1,4 +1,4 @@
-const tripModel = require('../models/trip.model')
+const tripModel = require('../modals/trip.modal')
 
 async function tripAdditionController(req, res){
     console.log(req.body)

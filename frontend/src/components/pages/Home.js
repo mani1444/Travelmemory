@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { baseUrl } from "../../url";
-import Card from "../UIC/Card";
+import Card from "../UIC/Cards";
 import FeaturedCard from "../UIC/FeaturedCard";
+import { baseUrl } from "../UIC/url";
 
 export default function Home() {
   const [data, setData] = useState();

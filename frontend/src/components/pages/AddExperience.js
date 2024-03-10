@@ -1,6 +1,7 @@
+
 import axios from "axios";
 import React, { useState } from "react";
-import { baseUrl } from "../../url";
+import { baseUrl } from "../UIC/url";
 
 export default function AddExperience() {
     const [formdata, setFormdata] = useState({

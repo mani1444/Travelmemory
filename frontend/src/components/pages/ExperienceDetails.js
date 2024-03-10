@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { baseUrl } from "../../url";
+import { baseUrl } from "../UIC/url";
 
 export default function ExperienceDetails(props) {
   const { id } = useParams()
