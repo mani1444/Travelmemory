@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Card from "../UIC/Cards";
 import FeaturedCard from "../UIC/FeaturedCard";
 import { baseUrl } from "../UIC/url";
 
@@ -27,14 +26,15 @@ export default function Home() {
                     }
                 })}
                 {data.map((e) => {
-                    if (!e.featured) {
+                    if (e.featured) {
                         return (
-                            <Card
+                            <FeaturedCard
+                                key={e._id}
                                 title={e.tripName}
                                 tripType={e.tripType}
                                 description={e.shortDescription}
                                 id={e._id}
-                            ></Card>
+                            ></FeaturedCard>
                         );
                     } else {
                         return null;

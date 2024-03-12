@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './App.css';
+import '../src/App.css';
 
 import AddExperience from './components/pages/AddExperience';
 import ExperienceDetails from './components/pages/ExperienceDetails';

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Card(props) {
     const navigate = useNavigate()
     const visitDetails = () => {
-        navigate(`/Experiencedetails/${props.id}`)
+        navigate(`/experiencedetails/${props.id}`)
     }
   return (
     <div style={{ marginBottom: "2%", marginTop: "2%"}}>

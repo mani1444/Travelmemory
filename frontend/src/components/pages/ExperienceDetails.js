@@ -7,12 +7,18 @@ export default function ExperienceDetails(props) {
     const { id } = useParams()
     const [data, setData] = useState()
 
+
+    
     useEffect(() => {
         axios.get(`${baseUrl}/trip/${id}`)
             .then((res) => {
                 console.log(res.data)
                 setData(res.data)
             })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                // Handle error, e.g., set an error state
+            });
     }, [id])
     if (data) {
         return (
